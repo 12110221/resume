@@ -533,29 +533,46 @@ class Navigation {
 }
 
 // ============================================
-// Custom Cursor - Love Arrow with Meteor Trail
+// Custom Cute Cursor - Pink Arrow with Heart and Trail
 // ============================================
-class LoveCursor {
+class CuteCursor {
     constructor() {
-        this.cursor = document.getElementById('cursor-container');
+        this.cursor = document.getElementById('cursor');
+        this.trailContainer = document.getElementById('trail-container');
+        this.lastX = 0;
+        this.lastY = 0;
         this.init();
     }
 
     init() {
         // Track mouse movement
         document.addEventListener('mousemove', (e) => {
+            // Update cursor position
             this.cursor.style.left = e.clientX + 'px';
             this.cursor.style.top = e.clientY + 'px';
+
+            // Create trail effect
+            if (this.lastX !== 0 || this.lastY !== 0) {
+                const dist = Math.sqrt(
+                    Math.pow(e.clientX - this.lastX, 2) +
+                    Math.pow(e.clientY - this.lastY, 2)
+                );
+                if (dist > 8) {
+                    this.createTrail(e.clientX, e.clientY);
+                }
+            }
+            this.lastX = e.clientX;
+            this.lastY = e.clientY;
         });
 
-        // Show cursor on mouse enter body
-        document.body.addEventListener('mouseenter', () => {
+        // Show cursor
+        document.addEventListener('mouseenter', () => {
             this.cursor.style.opacity = '1';
         });
 
-        // Hide default cursor on certain elements
-        const hideCursorElements = document.querySelectorAll('a, button, .nav-item, input, textarea');
-        hideCursorElements.forEach(el => {
+        // Hide on interactive elements
+        const hideOnElements = document.querySelectorAll('a, button, .nav-item, input, textarea');
+        hideOnElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 this.cursor.style.opacity = '0';
             });
@@ -566,6 +583,20 @@ class LoveCursor {
 
         // Initial show
         this.cursor.style.opacity = '1';
+    }
+
+    createTrail(x, y) {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = x + 'px';
+        trail.style.top = y + 'px';
+        trail.innerHTML = '<div class="trail-dot"></div>';
+        this.trailContainer.appendChild(trail);
+
+        // Remove after animation
+        setTimeout(() => {
+            trail.remove();
+        }, 600);
     }
 }
 
@@ -581,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1500);
 
     // Initialize custom cursor
-    new LoveCursor();
+    new CuteCursor();
 
     // Initialize WebGL background
     const webglCanvas = document.getElementById('webgl-canvas');
