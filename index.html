@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Custom Cursor Container -->
+    <div class="cursor-container" id="cursor-container">
+        <div class="cursor-heart"></div>
+        <div class="cursor-arrow"></div>
+        <div class="meteor-trail"></div>
+        <div class="cursor-sparkle"></div>
+        <div class="cursor-sparkle"></div>
+        <div class="cursor-sparkle"></div>
+    </div>
+
     <!-- WebGL Canvas Background -->
     <canvas id="webgl-canvas"></canvas>
 
@@ -63,7 +73,7 @@
                         <div class="about-header">
                             <div class="avatar-wrapper">
                                 <div class="avatar-ring"></div>
-                                <div class="avatar-inner">CSZ</div>
+                                <img src="assets/avatar.jpg" alt="陈劭哲" class="avatar-img">
                             </div>
                             <div class="about-intro">
                                 <h3>陈劭哲</h3>
@@ -107,7 +117,7 @@
                         <div class="timeline-content">
                             <div class="education-card master">
                                 <div class="card-header">
-                                    <h3>香港中文大学</h3>
+                                    <h3>香港中文大学 <span class="badge-qs">QS前50</span></h3>
                                     <span class="degree">硕士</span>
                                 </div>
                                 <p class="major">通信工程</p>
@@ -132,7 +142,7 @@
                         <div class="timeline-content">
                             <div class="education-card bachelor">
                                 <div class="card-header">
-                                    <h3>南方科技大学</h3>
+                                    <h3>南方科技大学 <span class="badge-double">双一流</span></h3>
                                     <span class="degree">本科</span>
                                 </div>
                                 <p class="major">微电子科学与技术</p>
@@ -146,6 +156,10 @@
                                 <div class="graduation-design">
                                     <span class="label">毕业设计</span>
                                     <p>基于YOLOv11目标检测算法的无人机遥感自制数据集，实现精准农业下玉米出苗质量智能评估</p>
+                                </div>
+                                <div class="campus-life">
+                                    <span class="label">校园生活</span>
+                                    <p>书院学生会主席，青年马克思主义者培养工程</p>
                                 </div>
                             </div>
                         </div>
@@ -165,12 +179,10 @@
                     <div class="experience-card">
                         <div class="card-visual">
                             <div class="visual-glow"></div>
+                            <div class="company-name-overlay">数美万物(广州)网络技术有限公司</div>
+                            <div class="company-period-overlay">2025.07 - 2025.10</div>
                         </div>
                         <div class="card-content">
-                            <div class="company-header">
-                                <h3>数美万物(广州)网络技术有限公司</h3>
-                                <span class="period">2025.07 - 2025.10</span>
-                            </div>
                             <p class="position">图像算法开发</p>
                             <ul class="achievements">
                                 <li>负责5090集群服务器上ComfyUI环境搭建，落地基于Flux模型的AI图像/视频生成工作流</li>
@@ -184,12 +196,10 @@
                     <div class="experience-card">
                         <div class="card-visual huawei">
                             <div class="visual-glow"></div>
+                            <div class="company-name-overlay">华为技术有限公司</div>
+                            <div class="company-period-overlay">2024.06 - 2024.08</div>
                         </div>
                         <div class="card-content">
-                            <div class="company-header">
-                                <h3>华为技术有限公司</h3>
-                                <span class="period">2024.06 - 2024.08</span>
-                            </div>
                             <p class="position">AI开发实习生</p>
                             <ul class="achievements">
                                 <li>基于华为MindSpore框架及昇腾生态，完成CV+NLP多类深度学习模型的全流程开发</li>
@@ -293,29 +303,17 @@
                     <span class="title-en">Skills</span>
                     <span class="title-cn">专业技能</span>
                 </h2>
-                <div class="skills-container">
+                <div class="skills-container skills-single-row">
                     <div class="skill-category">
                         <h3>
                             <span class="category-icon">🧠</span>
                             大模型
                         </h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">Transformer</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">ViT</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">预训练与微调</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">LoRA / QLoRA</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
-                            </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Transformer</span>
+                            <span class="skill-tag">ViT</span>
+                            <span class="skill-tag">预训练与微调</span>
+                            <span class="skill-tag">LoRA / QLoRA</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -323,19 +321,11 @@
                             <span class="category-icon">🎨</span>
                             图像生成
                         </h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">扩散模型</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 93%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">YOLO目标检测</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">模型加速</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
-                            </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">扩散模型</span>
+                            <span class="skill-tag">YOLO</span>
+                            <span class="skill-tag">模型加速</span>
+                            <span class="skill-tag">ComfyUI</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -343,23 +333,11 @@
                             <span class="category-icon">🔗</span>
                             RAG & Agent
                         </h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">LangChain / LangGraph</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">混合检索 / Rerank</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">GraphRAG</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 82%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">多Agent协作</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
-                            </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">LangGraph</span>
+                            <span class="skill-tag">GraphRAG</span>
+                            <span class="skill-tag">多Agent</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -367,19 +345,11 @@
                             <span class="category-icon">⚙️</span>
                             工具
                         </h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">Linux</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">PyTorch</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">提示词工程</span>
-                                <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
-                            </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">PostgreSQL</span>
                         </div>
                     </div>
                 </div>

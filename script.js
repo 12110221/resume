@@ -533,6 +533,43 @@ class Navigation {
 }
 
 // ============================================
+// Custom Cursor - Love Arrow with Meteor Trail
+// ============================================
+class LoveCursor {
+    constructor() {
+        this.cursor = document.getElementById('cursor-container');
+        this.init();
+    }
+
+    init() {
+        // Track mouse movement
+        document.addEventListener('mousemove', (e) => {
+            this.cursor.style.left = e.clientX + 'px';
+            this.cursor.style.top = e.clientY + 'px';
+        });
+
+        // Show cursor on mouse enter body
+        document.body.addEventListener('mouseenter', () => {
+            this.cursor.style.opacity = '1';
+        });
+
+        // Hide default cursor on certain elements
+        const hideCursorElements = document.querySelectorAll('a, button, .nav-item, input, textarea');
+        hideCursorElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                this.cursor.style.opacity = '0';
+            });
+            el.addEventListener('mouseleave', () => {
+                this.cursor.style.opacity = '1';
+            });
+        });
+
+        // Initial show
+        this.cursor.style.opacity = '1';
+    }
+}
+
+// ============================================
 // Initialize Everything
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -542,6 +579,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('main-content').classList.add('visible');
         state.isLoaded = true;
     }, 1500);
+
+    // Initialize custom cursor
+    new LoveCursor();
 
     // Initialize WebGL background
     const webglCanvas = document.getElementById('webgl-canvas');
