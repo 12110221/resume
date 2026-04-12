@@ -45,6 +45,122 @@ body {
     cursor: none;
 }
 
+/* ============================================
+   Language Switcher - Rotating Planet
+   ============================================ */
+.language-switcher {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50px;
+    background: rgba(18, 18, 26, 0.8);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
+
+.language-switcher:hover {
+    border-color: var(--nebula-violet);
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+    transform: scale(1.05);
+}
+
+.planet-container {
+    width: 36px;
+    height: 36px;
+    position: relative;
+}
+
+.planet {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--nebula-violet), var(--nebula-cyan));
+    position: relative;
+    overflow: hidden;
+    animation: planetRotate 10s linear infinite;
+}
+
+.planet-surface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 40%),
+        linear-gradient(135deg, var(--nebula-violet), var(--nebula-cyan), var(--nebula-pink));
+}
+
+.planet-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 52px;
+    height: 14px;
+    border: 2px solid rgba(124, 58, 237, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    animation: ringTilt 3s ease-in-out infinite;
+}
+
+.star-ring {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 52px;
+    height: 52px;
+    animation: starRingRotate 20s linear infinite;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--star-white);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--star-white), 0 0 20px var(--nebula-cyan);
+}
+
+.star-1 { top: 0; left: 50%; transform: translateX(-50%); }
+.star-2 { top: 20%; right: 0; }
+.star-3 { bottom: 20%; right: 0; }
+.star-4 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.star-5 { bottom: 20%; left: 0; }
+.star-6 { top: 20%; left: 0; }
+
+@keyframes planetRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ringTilt {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-20deg); }
+    50% { transform: translate(-50%, -50%) rotate(-15deg); }
+}
+
+@keyframes starRingRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.lang-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--star-white);
+    transition: var(--transition-smooth);
+}
+
+.language-switcher:hover .lang-label {
+    color: var(--nebula-cyan);
+}
+
 /* Custom Cursor - Cute Pink Arrow with Heart */
 .cursor-wrapper {
     position: fixed;
@@ -308,6 +424,11 @@ a, button, .nav-item {
     text-align: center;
     z-index: 10;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .logo-container {
@@ -390,10 +511,7 @@ a, button, .nav-item {
 }
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -405,8 +523,8 @@ a, button, .nav-item {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
 }
 
 .scroll-arrow {

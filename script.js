@@ -601,6 +601,252 @@ class CuteCursor {
 }
 
 // ============================================
+// Internationalization (i18n) System
+// ============================================
+const i18n = {
+    currentLang: 'zh',
+    translations: {
+        en: {
+            scroll_down: 'Scroll Down',
+            title: 'LLM Algorithm Engineer',
+            tag1: 'LLM',
+            tag2: 'Diffusion',
+            tag3: 'Agent',
+            about_title_en: 'About Me',
+            about_title_cn: '',
+            name: 'Chen Shaozhe',
+            job_title: 'LLM Algorithm Engineer',
+            age: '22 years old · Male',
+            education_title_en: 'Education',
+            education_title_cn: '',
+            cuhk_name: 'The Chinese University of Hong Kong',
+            qs_badge: 'QS Top 50',
+            master_degree: 'Master',
+            cuhk_major: 'Communication Engineering',
+            research_label: 'Research',
+            research_content: 'Diffusion Model Acceleration, Agent Architecture, LLM Fine-tuning, Prompt Engineering',
+            course1: 'Image Processing & Computer Vision',
+            course2: 'Machine Learning & Intelligent Communications',
+            course3: 'Stochastic Processes',
+            sustech_name: 'Southern University of Science and Technology',
+            double_badge: 'Double First-Class',
+            bachelor_degree: 'Bachelor',
+            sustech_major: 'Microelectronics Science & Technology',
+            sustech_course1: 'Deep Learning Chip Design',
+            sustech_course2: 'Microprocessor Design',
+            sustech_course3: 'Signals & Systems',
+            sustech_course4: 'Digital IC Design',
+            grad_design_label: 'Graduation Design',
+            grad_design_content: 'YOLOv11-based UAV remote sensing dataset for intelligent corn seedling quality assessment in precision agriculture',
+            campus_label: 'Campus Life',
+            campus_content: 'Student Union President, Youth Marxist Training Program',
+            experience_title_en: 'Experience',
+            experience_title_cn: '',
+            company1_name: 'ShumeiWANWU (Guangzhou) Network Technology',
+            position1: 'Image Algorithm Developer',
+            exp1_1: 'Built ComfyUI environment on 5090 cluster servers, deployed AI image/video generation workflows based on Flux model',
+            exp1_2: 'Self-developed ComfyUI dual-guidance nodes, supporting dual-model step allocation and multi-acceleration strategy integration',
+            exp1_3: 'Deployed three strategies in ComfyUI: Teacache step-skipping acceleration, model quantization, kv-cache/SageAttention optimization',
+            exp1_4: 'Discovered and fixed Teacache acceleration bug, achieving 40% visually lossless speedup',
+            exp1_5: 'Trained style-specific LoRA using Flux model, applied distribution matching distillation for 4x image generation speedup',
+            company2_name: 'Huawei Technologies Co., Ltd.',
+            position2: 'AI Development Intern',
+            exp2_1: 'Completed full CV+NLP deep learning model development based on Huawei MindSpore and Ascend ecosystem',
+            exp2_2: 'CV: Deployed LeNet5/ResNet50/GoogleNet models, implemented handwritten digit/object recognition on MNIST/CIFAR datasets',
+            exp2_3: 'NLP: Built Seq2Seq model with Attention, implemented Chinese-English bidirectional machine translation',
+            exp2_4: 'Completed model training and validation entirely on Huawei Cloud ECS servers',
+            projects_title_en: 'Projects',
+            projects_title_cn: '',
+            project1_title: 'AI Intelligent Travel Planning System',
+            project1_type: 'Agent Development',
+            project1_desc: 'Designed multi-Agent collaboration architecture with dynamic prompt and tool injection via Middleware, achieving process orchestration and business logic decoupling',
+            project1_h1: 'Multi-Query, HyDE, BM25+Dense vector retrieval, RRF fusion, LLM reranking',
+            project1_h2: 'Built with FastMCP, MultiServerMCPClient for unified multi-service invocation',
+            project1_h3: 'PostgreSQL session-level Checkpointer + long-term user profile storage',
+            project2_title: 'Raspberry Pi Robot Smart Elderly Care Environment Sensing System',
+            project2_type: 'Algorithm Implementation',
+            project2_desc: 'Designed and implemented 360° panoramic scanning and semantic understanding robot system, providing lightweight and highly interpretable environmental safety monitoring for smart elderly care',
+            project2_h1_label: '3-Level Recognition',
+            project2_h1: 'Space-Object-State three-level semantic understanding',
+            project2_h2_label: 'Anomaly Detection',
+            project2_h2: 'Doors, obstacles, unclosed fire, etc.',
+            project2_h3_label: 'Voice Alert',
+            project2_h3: 'Real-time voice reminders and warnings',
+            skills_title_en: 'Skills',
+            skills_title_cn: '',
+            skill_cat1: 'LLM',
+            skill1_3: 'Pre-training & Fine-tuning',
+            skill_cat2: 'Image Generation',
+            skill2_1: 'Diffusion Models',
+            skill2_2: 'YOLO Object Detection',
+            skill2_3: 'Model Acceleration',
+            skill_cat3: 'RAG & Agent',
+            skill3_2: 'Hybrid Retrieval / Rerank',
+            skill3_4: 'Multi-Agent Collaboration',
+            skill_cat4: 'Tools',
+            skill4_3: 'Prompt Engineering',
+            contact_title_en: 'Contact',
+            contact_title_cn: '',
+            phone_label: 'Phone',
+            email_label: 'Email',
+            edu_label: 'Education',
+            edu_value: 'CUHK (M.Sc.)',
+            name_footer: 'Chen Shaozhe',
+            footer_tagline: 'LLM Algorithm | Diffusion Models | Agent Architecture'
+        },
+        zh: {
+            scroll_down: '向下探索',
+            title: '大模型算法工程师',
+            tag1: '大模型算法',
+            tag2: '扩散模型',
+            tag3: 'Agent架构',
+            about_title_en: 'About Me',
+            about_title_cn: '关于我',
+            name: '陈劭哲',
+            job_title: '大模型算法工程师',
+            age: '22岁 · 男',
+            education_title_en: 'Education',
+            education_title_cn: '教育背景',
+            cuhk_name: '香港中文大学',
+            qs_badge: 'QS前50',
+            master_degree: '硕士',
+            cuhk_major: '通信工程',
+            research_label: '研究方向',
+            research_content: '扩散模型加速、Agent架构、大模型微调、提示词工程',
+            course1: '图像处理与计算机视觉',
+            course2: '机器学习与智能通信',
+            course3: '随机过程',
+            sustech_name: '南方科技大学',
+            double_badge: '双一流',
+            bachelor_degree: '本科',
+            sustech_major: '微电子科学与技术',
+            sustech_course1: '深度学习芯片设计',
+            sustech_course2: '微型计算机处理器设计',
+            sustech_course3: '信号与系统',
+            sustech_course4: '数字集成电路设计',
+            grad_design_label: '毕业设计',
+            grad_design_content: '基于YOLOv11目标检测算法的无人机遥感自制数据集，实现精准农业下玉米出苗质量智能评估',
+            campus_label: '校园生活',
+            campus_content: '书院学生会主席，青年马克思主义者培养工程',
+            experience_title_en: 'Experience',
+            experience_title_cn: '实习经历',
+            company1_name: '数美万物(广州)网络技术有限公司',
+            position1: '图像算法开发',
+            exp1_1: '负责5090集群服务器上ComfyUI环境搭建，落地基于Flux模型的AI图像/视频生成工作流',
+            exp1_2: '自研ComfyUI双引导器节点，支持双模型步数分配与多加速策略融合',
+            exp1_3: '在ComfyUI部署三类策略（Teacache跳步加速、模型量化、kv-cache/SageAttention底层优化）',
+            exp1_4: '发现并修正Teacache跳步加速漏洞，实现40%肉眼无损加速',
+            exp1_5: '基于Flux模型训练特定风格Lora，使用分布匹配蒸馏方法进行少步蒸馏，实现生图四倍加速',
+            company2_name: '华为技术有限公司',
+            position2: 'AI开发实习生',
+            exp2_1: '基于华为MindSpore框架及昇腾生态，完成CV+NLP多类深度学习模型的全流程开发',
+            exp2_2: 'CV方向：落地LeNet5/ResNet50/GoogleNet模型，基于MNIST/CIFAR数据集实现手写体/物体识别',
+            exp2_3: 'NLP方向：搭建带Attention的Seq2Seq模型，实现中英双向机器翻译',
+            exp2_4: '全程基于华为云ECS服务器完成模型训练与验证',
+            projects_title_en: 'Projects',
+            projects_title_cn: '项目经历',
+            project1_title: 'AI智能旅行规划系统',
+            project1_type: 'Agent开发',
+            project1_desc: '设计多Agent协作架构，通过Middleware动态注入提示词与工具集，实现流程编排与业务逻辑解耦',
+            project1_h1: 'Multi-Query、HyDE、BM25+Dense向量检索、RRF融合、LLM重排序',
+            project1_h2: '基于FastMCP构建，MultiServerMCPClient多服务统一调用',
+            project1_h3: 'PostgreSQL会话级Checkpointer + 用户画像长期存储',
+            project2_title: '树莓派机器人智能养老环境感知系统',
+            project2_type: '算法实现',
+            project2_desc: '设计并实现360°全景扫描与语义理解机器人系统，为智慧养老提供轻量化、高可解释性的环境安全监测方案',
+            project2_h1_label: '三级智能识别',
+            project2_h1: '空间-物体-状态三级语义理解',
+            project2_h2_label: '环境异常检测',
+            project2_h2: '门窗、障碍物、未关火等状态检测',
+            project2_h3_label: '语音提醒',
+            project2_h3: '语音模块进行实时提醒与警告',
+            skills_title_en: 'Skills',
+            skills_title_cn: '专业技能',
+            skill_cat1: '大模型',
+            skill1_3: '预训练与微调',
+            skill_cat2: '图像生成',
+            skill2_1: '扩散模型',
+            skill2_2: 'YOLO目标检测',
+            skill2_3: '模型加速',
+            skill_cat3: 'RAG & Agent',
+            skill3_2: '混合检索 / Rerank',
+            skill3_4: '多Agent协作',
+            skill_cat4: '工具',
+            skill4_3: '提示词工程',
+            contact_title_en: 'Contact',
+            contact_title_cn: '联系方式',
+            phone_label: '电话',
+            email_label: '邮箱',
+            edu_label: '教育',
+            edu_value: '香港中文大学(硕士)',
+            name_footer: '陈劭哲',
+            footer_tagline: '大模型算法工程师 | 扩散模型 | Agent架构'
+        }
+    },
+
+    init() {
+        // Load saved language preference
+        const savedLang = localStorage.getItem('portfolio-lang') || 'zh';
+        this.currentLang = savedLang;
+        this.updatePage();
+        this.setupSwitcher();
+    },
+
+    toggle() {
+        this.currentLang = this.currentLang === 'zh' ? 'en' : 'zh';
+        localStorage.setItem('portfolio-lang', this.currentLang);
+        this.updatePage();
+    },
+
+    updatePage() {
+        const t = this.translations[this.currentLang];
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) {
+                el.textContent = t[key];
+            }
+        });
+
+        // Update section title visibility
+        document.querySelectorAll('.section-title').forEach(title => {
+            const enEl = title.querySelector('.title-en');
+            const cnEl = title.querySelector('.title-cn');
+            if (cnEl) {
+                cnEl.style.display = this.currentLang === 'zh' ? 'inline' : 'none';
+            }
+        });
+
+        // Update language label
+        const label = document.querySelector('.lang-label');
+        if (label) {
+            label.textContent = this.currentLang === 'zh' ? '中' : 'EN';
+        }
+
+        // Update typing animation texts
+        if (typeof TypingAnimation !== 'undefined') {
+            const typingElement = document.getElementById('typing-text');
+            if (typingElement && window.typingAnimationInstance) {
+                window.typingAnimationInstance.texts = this.currentLang === 'zh'
+                    ? ['大模型算法工程师', '扩散模型加速', 'Agent架构开发', 'RAG&Agent专家']
+                    : ['LLM Algorithm Engineer', 'Diffusion Model Acceleration', 'Agent Architecture', 'RAG & Agent Expert'];
+            }
+        }
+
+        // Update document lang attribute
+        document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
+    },
+
+    setupSwitcher() {
+        const switcher = document.getElementById('language-switcher');
+        if (switcher) {
+            switcher.addEventListener('click', () => this.toggle());
+        }
+    }
+};
+
+// ============================================
 // Initialize Everything
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -633,14 +879,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const rippleContainer = document.getElementById('ripples-container');
     const rippleEffect = new RippleEffect(rippleContainer);
 
+    // Initialize i18n system
+    i18n.init();
+
     // Typing animation
     const typingElement = document.getElementById('typing-text');
-    const typingAnimation = new TypingAnimation(typingElement, [
-        '大模型算法工程师',
-        '扩散模型加速',
-        'Agent架构开发',
-        'RAG&Agent专家'
-    ]);
+    const typingTexts = i18n.currentLang === 'zh'
+        ? ['大模型算法工程师', '扩散模型加速', 'Agent架构开发', 'RAG&Agent专家']
+        : ['LLM Algorithm Engineer', 'Diffusion Model Acceleration', 'Agent Architecture', 'RAG & Agent Expert'];
+    const typingAnimation = new TypingAnimation(typingElement, typingTexts);
+    window.typingAnimationInstance = typingAnimation;
 
     // Scroll animations
     new ScrollAnimations();

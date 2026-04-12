@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Language Switcher - Rotating Planet -->
+    <div class="language-switcher" id="language-switcher">
+        <div class="planet-container">
+            <div class="planet">
+                <div class="planet-surface"></div>
+                <div class="planet-ring"></div>
+            </div>
+            <div class="star-ring">
+                <div class="star star-1"></div>
+                <div class="star star-2"></div>
+                <div class="star star-3"></div>
+                <div class="star star-4"></div>
+                <div class="star star-5"></div>
+                <div class="star star-6"></div>
+            </div>
+        </div>
+        <span class="lang-label">中</span>
+    </div>
+
     <!-- Custom Cute Cursor -->
     <div class="cursor-wrapper" id="cursor">
         <div class="cursor-main">
@@ -47,16 +66,16 @@
                     <span class="title-line" data-text="陈劭哲">陈劭哲</span>
                 </h1>
                 <p class="hero-subtitle">
-                    <span class="typing-text" id="typing-text"></span>
+                    <span class="typing-text" id="typing-text" data-i18n="title"></span>
                     <span class="cursor">|</span>
                 </p>
                 <div class="hero-tags">
-                    <span class="tag">大模型算法</span>
-                    <span class="tag">扩散模型</span>
-                    <span class="tag">Agent架构</span>
+                    <span class="tag" data-i18n="tag1">大模型算法</span>
+                    <span class="tag" data-i18n="tag2">扩散模型</span>
+                    <span class="tag" data-i18n="tag3">Agent架构</span>
                 </div>
                 <div class="scroll-indicator">
-                    <span>向下探索</span>
+                    <span data-i18n="scroll_down">向下探索</span>
                     <div class="scroll-arrow"></div>
                 </div>
             </div>
@@ -67,8 +86,8 @@
         <section class="section about" id="about">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">About Me</span>
-                    <span class="title-cn">关于我</span>
+                    <span class="title-en" data-i18n="about_title_en">About Me</span>
+                    <span class="title-cn" data-i18n="about_title_cn">关于我</span>
                 </h2>
                 <div class="about-content">
                     <div class="about-card">
@@ -79,9 +98,9 @@
                                 <img src="assets/avatar.jpg" alt="陈劭哲" class="avatar-img">
                             </div>
                             <div class="about-intro">
-                                <h3>陈劭哲</h3>
-                                <p class="title">大模型算法工程师</p>
-                                <p class="age">22岁 · 男</p>
+                                <h3 data-i18n="name">陈劭哲</h3>
+                                <p class="title" data-i18n="job_title">大模型算法工程师</p>
+                                <p class="age" data-i18n="age">22岁 · 男</p>
                             </div>
                         </div>
                         <div class="contact-info">
@@ -108,8 +127,8 @@
         <section class="section education" id="education">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">Education</span>
-                    <span class="title-cn">教育背景</span>
+                    <span class="title-en" data-i18n="education_title_en">Education</span>
+                    <span class="title-cn" data-i18n="education_title_cn">教育背景</span>
                 </h2>
                 <div class="timeline">
                     <div class="timeline-item" data-year="2025">
@@ -120,19 +139,19 @@
                         <div class="timeline-content">
                             <div class="education-card master">
                                 <div class="card-header">
-                                    <h3>香港中文大学 <span class="badge-qs">QS前50</span></h3>
-                                    <span class="degree">硕士</span>
+                                    <h3><span data-i18n="cuhk_name">香港中文大学</span> <span class="badge-qs" data-i18n="qs_badge">QS前50</span></h3>
+                                    <span class="degree" data-i18n="master_degree">硕士</span>
                                 </div>
-                                <p class="major">通信工程</p>
+                                <p class="major" data-i18n="cuhk_major">通信工程</p>
                                 <p class="period">2025.09 - 2027.06</p>
                                 <div class="research">
-                                    <span class="label">研究方向</span>
-                                    <p>扩散模型加速、Agent架构、大模型微调、提示词工程</p>
+                                    <span class="label" data-i18n="research_label">研究方向</span>
+                                    <p data-i18n="research_content">扩散模型加速、Agent架构、大模型微调、提示词工程</p>
                                 </div>
                                 <div class="courses">
-                                    <span>图像处理与计算机视觉</span>
-                                    <span>机器学习与智能通信</span>
-                                    <span>随机过程</span>
+                                    <span data-i18n="course1">图像处理与计算机视觉</span>
+                                    <span data-i18n="course2">机器学习与智能通信</span>
+                                    <span data-i18n="course3">随机过程</span>
                                 </div>
                             </div>
                         </div>
@@ -145,24 +164,24 @@
                         <div class="timeline-content">
                             <div class="education-card bachelor">
                                 <div class="card-header">
-                                    <h3>南方科技大学 <span class="badge-double">双一流</span></h3>
-                                    <span class="degree">本科</span>
+                                    <h3><span data-i18n="sustech_name">南方科技大学</span> <span class="badge-double" data-i18n="double_badge">双一流</span></h3>
+                                    <span class="degree" data-i18n="bachelor_degree">本科</span>
                                 </div>
-                                <p class="major">微电子科学与技术</p>
+                                <p class="major" data-i18n="sustech_major">微电子科学与技术</p>
                                 <p class="period">2021.09 - 2025.06</p>
                                 <div class="courses">
-                                    <span>深度学习芯片设计</span>
-                                    <span>微型计算机处理器设计</span>
-                                    <span>信号与系统</span>
-                                    <span>数字集成电路设计</span>
+                                    <span data-i18n="sustech_course1">深度学习芯片设计</span>
+                                    <span data-i18n="sustech_course2">微型计算机处理器设计</span>
+                                    <span data-i18n="sustech_course3">信号与系统</span>
+                                    <span data-i18n="sustech_course4">数字集成电路设计</span>
                                 </div>
                                 <div class="graduation-design">
-                                    <span class="label">毕业设计</span>
-                                    <p>基于YOLOv11目标检测算法的无人机遥感自制数据集，实现精准农业下玉米出苗质量智能评估</p>
+                                    <span class="label" data-i18n="grad_design_label">毕业设计</span>
+                                    <p data-i18n="grad_design_content">基于YOLOv11目标检测算法的无人机遥感自制数据集，实现精准农业下玉米出苗质量智能评估</p>
                                 </div>
                                 <div class="campus-life">
-                                    <span class="label">校园生活</span>
-                                    <p>书院学生会主席，青年马克思主义者培养工程</p>
+                                    <span class="label" data-i18n="campus_label">校园生活</span>
+                                    <p data-i18n="campus_content">书院学生会主席，青年马克思主义者培养工程</p>
                                 </div>
                             </div>
                         </div>
@@ -175,40 +194,40 @@
         <section class="section experience" id="experience">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">Experience</span>
-                    <span class="title-cn">实习经历</span>
+                    <span class="title-en" data-i18n="experience_title_en">Experience</span>
+                    <span class="title-cn" data-i18n="experience_title_cn">实习经历</span>
                 </h2>
                 <div class="experience-grid">
                     <div class="experience-card">
                         <div class="card-visual">
                             <div class="visual-glow"></div>
-                            <div class="company-name-overlay">数美万物(广州)网络技术有限公司</div>
+                            <div class="company-name-overlay" data-i18n="company1_name">数美万物(广州)网络技术有限公司</div>
                             <div class="company-period-overlay">2025.07 - 2025.10</div>
                         </div>
                         <div class="card-content">
-                            <p class="position">图像算法开发</p>
+                            <p class="position" data-i18n="position1">图像算法开发</p>
                             <ul class="achievements">
-                                <li>负责5090集群服务器上ComfyUI环境搭建，落地基于Flux模型的AI图像/视频生成工作流</li>
-                                <li>自研ComfyUI双引导器节点，支持双模型步数分配与多加速策略融合</li>
-                                <li>在ComfyUI部署三类策略（Teacache跳步加速、模型量化、kv-cache/SageAttention底层优化）</li>
-                                <li>发现并修正Teacache跳步加速漏洞，实现40%肉眼无损加速</li>
-                                <li>基于Flux模型训练特定风格Lora，使用分布匹配蒸馏方法进行少步蒸馏，实现生图四倍加速</li>
+                                <li data-i18n="exp1_1">负责5090集群服务器上ComfyUI环境搭建，落地基于Flux模型的AI图像/视频生成工作流</li>
+                                <li data-i18n="exp1_2">自研ComfyUI双引导器节点，支持双模型步数分配与多加速策略融合</li>
+                                <li data-i18n="exp1_3">在ComfyUI部署三类策略（Teacache跳步加速、模型量化、kv-cache/SageAttention底层优化）</li>
+                                <li data-i18n="exp1_4">发现并修正Teacache跳步加速漏洞，实现40%肉眼无损加速</li>
+                                <li data-i18n="exp1_5">基于Flux模型训练特定风格Lora，使用分布匹配蒸馏方法进行少步蒸馏，实现生图四倍加速</li>
                             </ul>
                         </div>
                     </div>
                     <div class="experience-card">
                         <div class="card-visual huawei">
                             <div class="visual-glow"></div>
-                            <div class="company-name-overlay">华为技术有限公司</div>
+                            <div class="company-name-overlay" data-i18n="company2_name">华为技术有限公司</div>
                             <div class="company-period-overlay">2024.06 - 2024.08</div>
                         </div>
                         <div class="card-content">
-                            <p class="position">AI开发实习生</p>
+                            <p class="position" data-i18n="position2">AI开发实习生</p>
                             <ul class="achievements">
-                                <li>基于华为MindSpore框架及昇腾生态，完成CV+NLP多类深度学习模型的全流程开发</li>
-                                <li>CV方向：落地LeNet5/ResNet50/GoogleNet模型，基于MNIST/CIFAR数据集实现手写体/物体识别</li>
-                                <li>NLP方向：搭建带Attention的Seq2Seq模型，实现中英双向机器翻译</li>
-                                <li>全程基于华为云ECS服务器完成模型训练与验证</li>
+                                <li data-i18n="exp2_1">基于华为MindSpore框架及昇腾生态，完成CV+NLP多类深度学习模型的全流程开发</li>
+                                <li data-i18n="exp2_2">CV方向：落地LeNet5/ResNet50/GoogleNet模型，基于MNIST/CIFAR数据集实现手写体/物体识别</li>
+                                <li data-i18n="exp2_3">NLP方向：搭建带Attention的Seq2Seq模型，实现中英双向机器翻译</li>
+                                <li data-i18n="exp2_4">全程基于华为云ECS服务器完成模型训练与验证</li>
                             </ul>
                         </div>
                     </div>
@@ -220,8 +239,8 @@
         <section class="section projects" id="projects">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">Projects</span>
-                    <span class="title-cn">项目经历</span>
+                    <span class="title-en" data-i18n="projects_title_en">Projects</span>
+                    <span class="title-cn" data-i18n="projects_title_cn">项目经历</span>
                 </h2>
                 <div class="projects-grid">
                     <article class="project-card">
@@ -230,11 +249,11 @@
                             <div class="project-icon">🤖</div>
                         </div>
                         <div class="project-content">
-                            <h3>AI智能旅行规划系统</h3>
-                            <p class="project-type">Agent开发</p>
+                            <h3 data-i18n="project1_title">AI智能旅行规划系统</h3>
+                            <p class="project-type" data-i18n="project1_type">Agent开发</p>
                             <p class="project-period">2026.01 - 2026.03</p>
                             <div class="project-description">
-                                <p>设计多Agent协作架构，通过Middleware动态注入提示词与工具集，实现流程编排与业务逻辑解耦</p>
+                                <p data-i18n="project1_desc">设计多Agent协作架构，通过Middleware动态注入提示词与工具集，实现流程编排与业务逻辑解耦</p>
                             </div>
                             <div class="tech-stack">
                                 <span>LangGraph</span>
@@ -248,15 +267,15 @@
                             <div class="project-highlights">
                                 <div class="highlight">
                                     <span class="highlight-label">Advanced RAG</span>
-                                    <p>Multi-Query、HyDE、BM25+Dense向量检索、RRF融合、LLM重排序</p>
+                                    <p data-i18n="project1_h1">Multi-Query、HyDE、BM25+Dense向量检索、RRF融合、LLM重排序</p>
                                 </div>
                                 <div class="highlight">
                                     <span class="highlight-label">MCP Server</span>
-                                    <p>基于FastMCP构建，MultiServerMCPClient多服务统一调用</p>
+                                    <p data-i18n="project1_h2">基于FastMCP构建，MultiServerMCPClient多服务统一调用</p>
                                 </div>
                                 <div class="highlight">
                                     <span class="highlight-label">实时推送</span>
-                                    <p>PostgreSQL会话级Checkpointer + 用户画像长期存储</p>
+                                    <p data-i18n="project1_h3">PostgreSQL会话级Checkpointer + 用户画像长期存储</p>
                                 </div>
                             </div>
                         </div>
@@ -267,11 +286,11 @@
                             <div class="project-icon">🏠</div>
                         </div>
                         <div class="project-content">
-                            <h3>树莓派机器人智能养老环境感知系统</h3>
-                            <p class="project-type">算法实现</p>
+                            <h3 data-i18n="project2_title">树莓派机器人智能养老环境感知系统</h3>
+                            <p class="project-type" data-i18n="project2_type">算法实现</p>
                             <p class="project-period">2024.03 - 2024.06</p>
                             <div class="project-description">
-                                <p>设计并实现360°全景扫描与语义理解机器人系统，为智慧养老提供轻量化、高可解释性的环境安全监测方案</p>
+                                <p data-i18n="project2_desc">设计并实现360°全景扫描与语义理解机器人系统，为智慧养老提供轻量化、高可解释性的环境安全监测方案</p>
                             </div>
                             <div class="tech-stack">
                                 <span>树莓派</span>
@@ -281,16 +300,16 @@
                             </div>
                             <div class="project-highlights">
                                 <div class="highlight">
-                                    <span class="highlight-label">三级智能识别</span>
-                                    <p>空间-物体-状态三级语义理解</p>
+                                    <span class="highlight-label" data-i18n="project2_h1_label">三级智能识别</span>
+                                    <p data-i18n="project2_h1">空间-物体-状态三级语义理解</p>
                                 </div>
                                 <div class="highlight">
-                                    <span class="highlight-label">环境异常检测</span>
-                                    <p>门窗、障碍物、未关火等状态检测</p>
+                                    <span class="highlight-label" data-i18n="project2_h2_label">环境异常检测</span>
+                                    <p data-i18n="project2_h2">门窗、障碍物、未关火等状态检测</p>
                                 </div>
                                 <div class="highlight">
-                                    <span class="highlight-label">语音提醒</span>
-                                    <p>语音模块进行实时提醒与警告</p>
+                                    <span class="highlight-label" data-i18n="project2_h3_label">语音提醒</span>
+                                    <p data-i18n="project2_h3">语音模块进行实时提醒与警告</p>
                                 </div>
                             </div>
                         </div>
@@ -303,55 +322,55 @@
         <section class="section skills" id="skills">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">Skills</span>
-                    <span class="title-cn">专业技能</span>
+                    <span class="title-en" data-i18n="skills_title_en">Skills</span>
+                    <span class="title-cn" data-i18n="skills_title_cn">专业技能</span>
                 </h2>
                 <div class="skills-container skills-single-row">
                     <div class="skill-category">
                         <h3>
                             <span class="category-icon">🧠</span>
-                            大模型
+                            <span data-i18n="skill_cat1">大模型</span>
                         </h3>
                         <div class="skill-items">
                             <div class="skill-item"><span class="skill-name">Transformer</span><div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">ViT</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">预训练与微调</span><div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill1_3">预训练与微调</span><div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">LoRA / QLoRA</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>
                             <span class="category-icon">🎨</span>
-                            图像生成
+                            <span data-i18n="skill_cat2">图像生成</span>
                         </h3>
                         <div class="skill-items">
-                            <div class="skill-item"><span class="skill-name">扩散模型</span><div class="skill-bar"><div class="skill-fill" style="--fill: 93%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">YOLO目标检测</span><div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">模型加速</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill2_1">扩散模型</span><div class="skill-bar"><div class="skill-fill" style="--fill: 93%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill2_2">YOLO目标检测</span><div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill2_3">模型加速</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">ComfyUI</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>
                             <span class="category-icon">🔗</span>
-                            RAG & Agent
+                            <span data-i18n="skill_cat3">RAG & Agent</span>
                         </h3>
                         <div class="skill-items">
                             <div class="skill-item"><span class="skill-name">LangChain / LangGraph</span><div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">混合检索 / Rerank</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill3_2">混合检索 / Rerank</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">GraphRAG</span><div class="skill-bar"><div class="skill-fill" style="--fill: 82%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">多Agent协作</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill3_4">多Agent协作</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>
                             <span class="category-icon">⚙️</span>
-                            工具
+                            <span data-i18n="skill_cat4">工具</span>
                         </h3>
                         <div class="skill-items">
                             <div class="skill-item"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div></div>
-                            <div class="skill-item"><span class="skill-name">提示词工程</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
+                            <div class="skill-item"><span class="skill-name" data-i18n="skill4_3">提示词工程</span><div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div></div>
                             <div class="skill-item"><span class="skill-name">FastAPI / PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="--fill: 85%"></div></div></div>
                         </div>
                     </div>
@@ -363,24 +382,24 @@
         <section class="section contact" id="contact">
             <div class="container">
                 <h2 class="section-title">
-                    <span class="title-en">Contact</span>
-                    <span class="title-cn">联系方式</span>
+                    <span class="title-en" data-i18n="contact_title_en">Contact</span>
+                    <span class="title-cn" data-i18n="contact_title_cn">联系方式</span>
                 </h2>
                 <div class="contact-container">
                     <a href="tel:13622308371" class="contact-card">
                         <div class="contact-icon">📱</div>
-                        <span class="contact-label">电话</span>
+                        <span class="contact-label" data-i18n="phone_label">电话</span>
                         <span class="contact-value">13622308371</span>
                     </a>
                     <a href="mailto:225010315@link.cuhk.edu.cn" class="contact-card">
                         <div class="contact-icon">✉️</div>
-                        <span class="contact-label">邮箱</span>
+                        <span class="contact-label" data-i18n="email_label">邮箱</span>
                         <span class="contact-value">225010315@link.cuhk.edu.cn</span>
                     </a>
                     <div class="contact-card">
                         <div class="contact-icon">🎓</div>
-                        <span class="contact-label">教育</span>
-                        <span class="contact-value">香港中文大学(硕士)</span>
+                        <span class="contact-label" data-i18n="edu_label">教育</span>
+                        <span class="contact-value" data-i18n="edu_value">香港中文大学(硕士)</span>
                     </div>
                 </div>
             </div>
@@ -389,8 +408,8 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p class="copyright">© 2026 陈劭哲. All rights reserved.</p>
-                <p class="footer-tagline">大模型算法工程师 | 扩散模型 | Agent架构</p>
+                <p class="copyright">© 2026 <span data-i18n="name_footer">陈劭哲</span>. All rights reserved.</p>
+                <p class="footer-tagline"><span data-i18n="footer_tagline">大模型算法工程师 | 扩散模型 | Agent架构</span></p>
             </div>
         </footer>
     </main>
