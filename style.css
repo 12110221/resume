@@ -173,82 +173,98 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Main cursor arrow */
+/* Main cursor - Heart Arrow */
 .cursor-main {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     transform: rotate(-30deg);
-    filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.5));
+    filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.6));
 }
 
-/* Arrow shape */
+/* Heart-shaped arrow head (love tip) */
 .cursor-arrow {
     position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 20px solid #ff69b4;
-    top: 0;
+    width: 18px;
+    height: 18px;
+    top: -4px;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow(0 2px 6px rgba(255, 105, 180, 0.6));
 }
 
+/* Create heart shape using pseudo elements */
+.cursor-arrow::before,
 .cursor-arrow::after {
     content: '';
     position: absolute;
-    width: 14px;
+    width: 10px;
     height: 14px;
-    background: #ff69b4;
-    top: 6px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.6);
+}
+
+.cursor-arrow::before {
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+}
+
+.cursor-arrow::after {
+    top: 0;
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+}
+
+/* Arrow shaft */
+.cursor-arrow-shaft {
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(to bottom, #ff69b4, #ff1493);
+    top: 12px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 2px 2px 50% 50%;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.5);
 }
 
-/* Pink heart at cursor head */
-.cursor-heart-head {
+/* Arrow feathers at back */
+.cursor-arrow-feathers {
     position: absolute;
-    width: 14px;
-    height: 14px;
-    top: -2px;
+    top: 24px;
     left: 50%;
-    transform: translateX(-50%) rotate(-30deg);
-    z-index: 2;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 10px;
 }
 
-.cursor-heart-head::before,
-.cursor-heart-head::after {
+.cursor-arrow-feathers::before,
+.cursor-arrow-feathers::after {
     content: '';
     position: absolute;
     width: 8px;
     height: 8px;
     background: linear-gradient(135deg, #ff69b4, #ff1493);
-    border-radius: 50%;
 }
 
-.cursor-heart-head::before {
-    top: 0;
+.cursor-arrow-feathers::before {
     left: 0;
+    transform: rotate(30deg);
+    border-radius: 2px 50% 50% 50%;
 }
 
-.cursor-heart-head::after {
-    top: 0;
+.cursor-arrow-feathers::after {
     right: 0;
+    transform: rotate(-30deg);
+    border-radius: 50% 2px 50% 50%;
 }
 
-.cursor-heart-head .heart-bottom {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid #ff1493;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Remove old heart head styles - now integrated into arrow */
+.cursor-heart-head {
+    display: none;
 }
 
 /* Pink trail particles */
@@ -258,18 +274,41 @@ body {
     left: 0;
     pointer-events: none;
     z-index: 99998;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
 }
 
 .trail-dot {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 105, 180, 0.9), rgba(255, 105, 180, 0.3));
     animation: trailFade 0.6s ease-out forwards;
     transform: translate(-50%, -50%);
+}
+
+/* Heart-shaped trail using pseudo elements */
+.trail-dot::before,
+.trail-dot::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.9), rgba(255, 105, 180, 0.3));
+    border-radius: 10px 10px 0 0;
+}
+
+.trail-dot::before {
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: bottom right;
+}
+
+.trail-dot::after {
+    top: 0;
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
 }
 
 @keyframes trailFade {
@@ -286,25 +325,25 @@ body {
 /* Sparkle hearts */
 .cursor-sparkle-heart {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     animation: sparkleHeart 1.5s ease-in-out infinite;
 }
 
 .cursor-sparkle-heart::before {
     content: '💕';
-    font-size: 10px;
+    font-size: 12px;
 }
 
-.cursor-sparkle-heart:nth-child(1) {
-    top: -8px;
-    left: -8px;
+.cursor-sparkle-heart:nth-child(3) {
+    top: -12px;
+    left: -6px;
     animation-delay: 0s;
 }
 
-.cursor-sparkle-heart:nth-child(2) {
-    top: -6px;
-    right: -10px;
+.cursor-sparkle-heart:nth-child(4) {
+    top: -8px;
+    right: -12px;
     animation-delay: 0.3s;
 }
 
