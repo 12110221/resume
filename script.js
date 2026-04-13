@@ -230,17 +230,27 @@ class ParticleText {
     }
 
     resize() {
-        this.canvas.width = 200;
+        // Adjust canvas size based on text length
+        const textLength = this.text.length;
+        const isEnglish = /^[a-zA-Z]/.test(this.text);
+        const baseWidth = isEnglish ? Math.max(200, textLength * 28) : 200;
+        this.canvas.width = baseWidth;
         this.canvas.height = 200;
     }
 
     createTextParticles() {
+        // Resize canvas based on text
+        this.resize();
+
         // Create target positions forming the text
         this.ctx.fillStyle = '#000';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.ctx.fillStyle = '#fff';
-        this.ctx.font = 'bold 60px "Orbitron", sans-serif';
+        // Adjust font size for English text
+        const isEnglish = /^[a-zA-Z]/.test(this.text);
+        const fontSize = isEnglish ? 48 : 60;
+        this.ctx.font = `bold ${fontSize}px "Orbitron", sans-serif`;
         this.ctx.textAlign = 'center';
         this.ctx.textBaseline = 'middle';
         this.ctx.fillText(this.text, this.canvas.width / 2, this.canvas.height / 2);
@@ -311,6 +321,14 @@ class ParticleText {
     updateText(newText) {
         this.text = newText;
         this.createTextParticles();
+
+        // Update container width to fit the text
+        const container = document.getElementById('logo-container');
+        if (container) {
+            const isEnglish = /^[a-zA-Z]/.test(newText);
+            const baseWidth = isEnglish ? Math.max(200, newText.length * 28) : 200;
+            container.style.width = baseWidth + 'px';
+        }
     }
 }
 
