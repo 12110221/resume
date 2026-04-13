@@ -177,7 +177,7 @@ body {
 .cursor-main {
     position: relative;
     width: 28px;
-    height: 28px;
+    height: 60px;
     transform: rotate(-30deg);
     filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.6));
 }
@@ -187,12 +187,12 @@ body {
     position: absolute;
     width: 18px;
     height: 18px;
-    top: -4px;
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Create heart shape using pseudo elements */
+/* Create heart shape using pseudo elements - tip pointing outward */
 .cursor-arrow::before,
 .cursor-arrow::after {
     content: '';
@@ -205,36 +205,36 @@ body {
 }
 
 .cursor-arrow::before {
-    top: 0;
+    bottom: 0;
     left: 0;
     transform: rotate(-45deg);
-    transform-origin: bottom right;
+    transform-origin: top right;
 }
 
 .cursor-arrow::after {
-    top: 0;
+    bottom: 0;
     right: 0;
     transform: rotate(45deg);
-    transform-origin: bottom left;
+    transform-origin: top left;
 }
 
-/* Arrow shaft */
+/* Arrow shaft - extended by 50% (30px instead of 20px) */
 .cursor-arrow-shaft {
     position: absolute;
     width: 3px;
-    height: 20px;
-    background: linear-gradient(to bottom, #ff69b4, #ff1493);
-    top: 12px;
+    height: 30px;
+    background: linear-gradient(to top, #ff69b4, #ff1493);
+    bottom: 14px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
     box-shadow: 0 2px 6px rgba(255, 105, 180, 0.5);
 }
 
-/* Arrow feathers at back */
+/* Arrow feathers at back (now at top) */
 .cursor-arrow-feathers {
     position: absolute;
-    top: 24px;
+    bottom: 38px;
     left: 50%;
     transform: translateX(-50%);
     width: 16px;
@@ -252,14 +252,14 @@ body {
 
 .cursor-arrow-feathers::before {
     left: 0;
-    transform: rotate(30deg);
-    border-radius: 2px 50% 50% 50%;
+    transform: rotate(-30deg);
+    border-radius: 50% 2px 50% 50%;
 }
 
 .cursor-arrow-feathers::after {
     right: 0;
-    transform: rotate(-30deg);
-    border-radius: 50% 2px 50% 50%;
+    transform: rotate(30deg);
+    border-radius: 2px 50% 50% 50%;
 }
 
 /* Remove old heart head styles - now integrated into arrow */
@@ -336,14 +336,14 @@ body {
 }
 
 .cursor-sparkle-heart:nth-child(3) {
-    top: -12px;
+    bottom: 35px;
     left: -6px;
     animation-delay: 0s;
 }
 
 .cursor-sparkle-heart:nth-child(4) {
-    top: -8px;
-    right: -12px;
+    bottom: 40px;
+    right: -10px;
     animation-delay: 0.3s;
 }
 
