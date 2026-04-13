@@ -245,6 +245,9 @@ class ParticleText {
         this.ctx.textBaseline = 'middle';
         this.ctx.fillText(this.text, this.canvas.width / 2, this.canvas.height / 2);
 
+        // Clear the target particles array
+        this.targetParticles = [];
+
         const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
         const data = imageData.data;
 
@@ -303,6 +306,11 @@ class ParticleText {
 
     start() {
         this.animate();
+    }
+
+    updateText(newText) {
+        this.text = newText;
+        this.createTextParticles();
     }
 }
 
@@ -834,6 +842,12 @@ const i18n = {
             }
         }
 
+        // Update particle text (logo)
+        if (window.particleTextInstance) {
+            const nameText = this.currentLang === 'zh' ? '陈劭哲' : 'Chen Shaozhe';
+            window.particleTextInstance.updateText(nameText);
+        }
+
         // Update document lang attribute
         document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
     },
@@ -869,6 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoCanvas = document.getElementById('logo-canvas');
     const particleText = new ParticleText(logoCanvas);
     particleText.start();
+    window.particleTextInstance = particleText;
 
     // Initialize magnetic field
     const magneticContainer = document.getElementById('magnetic-field');
